@@ -38,25 +38,25 @@ That question inspired this project.
 
 ## 📊 Label Dashboard
 
-<img width="100%" src=" dashboard.png">
+<img width="100%" src="dashboard.png">
 
 ---
 
 ## ❤️ Audience Health Score
 
-<img width="100%" src=" health-score.png">
+<img width="100%" src="health-score.png">
 
 ---
 
 ## 🌱 Fan Ecosystem Journey
 
-<img width="100%" src=" ecosystem.png">
+<img width="100%" src="ecosystem.png">
 
 ---
 
 ## 💰 Revenue Opportunity Calculator
 
-<img width="100%" src=" calculator.png">
+<img width="100%" src="calculator.png">
 
 ---
 
