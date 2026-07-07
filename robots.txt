@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://vikrutisrija.github.io/Telugu-Music-Label-Intelligence-2.0/sitemap.xml
