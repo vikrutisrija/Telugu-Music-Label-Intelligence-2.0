@@ -1,0 +1,4064 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What is Telugu Music Label Intelligence?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Telugu Music Label Intelligence is a product strategy prototype that combines music-label benchmarking, revenue opportunity analysis, and strategy exploration tools for the Telugu music ecosystem."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Who created Telugu Music Label Intelligence?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Telugu Music Label Intelligence was created by Vikruti Srija as an independent product strategy project."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How does the Revenue Gap Calculator work?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The calculator uses subscriber counts and illustrative conversion assumptions to estimate potential audience monetization opportunities."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is this financial advice?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"No. The platform is intended for strategic exploration, product thinking, and educational analysis only."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Telugu Music Label Intelligence",
+  "url":"https://vikrutisrija.github.io/Telugu_Music_Label_Intelligence/",
+  "creator":{
+    "@type":"Person",
+    "name":"Vikruti Srija"
+  },
+  "description":"Strategy intelligence platform exploring Telugu music label growth, audience monetization, creator ecosystems, and revenue opportunities."
+}
+</script>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Telugu Music Label Intelligence Dashboard | Music Label Growth & Revenue Strategy</title>
+
+<meta name="description" content="Interactive dashboard exploring Telugu music label growth, revenue opportunities, creator ecosystems, and market intelligence.">
+
+<meta name="keywords" content="Telugu music, music labels, Aditya Music, Lahari Music, Saregama Music, Mango Music, music industry strategy">
+
+<meta name="author" content="Vikruti Srija">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  .chat-bubble-ai{
+    background:#1f1f1f;
+    border:1px solid #333;
+    border-radius:12px 12px 12px 4px;
+    padding:10px 14px;
+    max-width:82%;
+    font-size:13px;
+    line-height:1.6;
+    color:white;
+    white-space:pre-wrap;
+}
+
+.chat-bubble-user{
+    background:#0f2d44;
+    border:1px solid #333;
+    border-radius:12px 12px 4px 12px;
+    padding:10px 14px;
+    max-width:82%;
+    font-size:13px;
+    line-height:1.6;
+    color:white;
+}
+:root{
+    --bg:#0b0f14;
+    --card:#131922;
+    --card2:#181f2b;
+    --border:#253041;
+
+    --text:#ffffff;
+    --muted:#94a3b8;
+
+    --green:#10b981;
+    --blue:#3b82f6;
+    --purple:#8b5cf6;
+    --amber:#f59e0b;
+
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+body{
+    background:linear-gradient(
+        180deg,
+        #081018 0%,
+        #0b0f14 100%
+    );
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    margin:0;
+    padding:20px;
+    min-height:100vh;
+}
+
+.tab-container{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .sr-only{
+    display:none;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#tabs{
+overflow-x:auto;
+white-space:nowrap;
+scrollbar-width:none;
+}
+
+#tabs::-webkit-scrollbar{
+display:none;
+}
+
+.tab-btn{
+    background:var(--card);
+    border:1px solid var(--border);
+    color:white;
+    padding:12px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    margin-right:10px;
+    transition:.25s ease;
+    font-weight:500;
+}
+
+.tab-btn:hover{
+    background:#1d2430;
+}
+
+.tab-btn.active{
+    background:#1f2937;
+    border-color:#3b82f6;
+    color:#60a5fa;
+}
+
+
+.main-container{
+    width:min(1100px,95%);
+    margin:0 auto;
+    background:rgba(255,255,255,.02);
+    border:1px solid #1f2937;
+    border-radius:24px;
+    padding:28px;
+    backdrop-filter:blur(8px);
+}
+
+.metric-card{
+    background:#151b27;
+    border:1px solid #2d3b57;
+    border-radius:14px;
+    padding:16px;
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+    cursor:pointer;
+    user-select:none;
+    box-sizing:border-box;
+}
+
+.metric-card:hover{
+    border-color:#3b82f6;
+}
+.metric-card input[type="radio"]{
+    width:18px;
+    height:18px;
+    margin:0;
+    flex:0 0 18px;
+    cursor:pointer;
+    accent-color:#3b82f6;
+    pointer-events:none;
+}
+
+.metric-card input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    margin:0;
+    flex-shrink:0;
+    cursor:pointer;
+    accent-color:#3b82f6;
+}
+.metric-card:has(input[type="radio"]:checked){
+    border-color:#3b82f6;
+    background:#172033;
+}
+
+.metric-card:has(input[type="radio"]:checked) div:first-of-type{
+    color:#ffffff;
+}
+
+.label-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    transition:.25s ease;
+    width:100%;
+box-sizing:border-box;
+margin-top:24px;
+}
+
+.label-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+    border-color:#334155;
+}
+.label-card{
+transition:0.2s ease;
+}
+
+
+
+
+.stat-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.bar-bg{
+    background:#2c2c2c;
+    border-radius:999px;
+    height:8px;
+    overflow:hidden;
+}
+
+.quick-btn{
+    background:#2a2a2a;
+    border:none;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+input{
+    background:#111827;
+    border:1px solid var(--border);
+    color:white;
+    padding:12px 14px;
+    border-radius:12px;
+    transition:.25s ease;
+}
+
+input:focus{
+    outline:none;
+    border-color:#3b82f6;
+    box-shadow:0 0 0 3px rgba(59,130,246,.15);
+}
+
+button{
+    background:#1e293b;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+button:hover{
+    background:#334155;
+}
+
+
+
+h1,h2,h3{
+    color:white;
+}
+
+small{
+    color:#999;
+}
+@media (max-width:768px){
+
+body{
+    padding:12px;
+}
+
+#header-section{
+    flex-direction:column !important;
+    gap:12px;
+}
+
+#tabs{
+    display:flex;
+    flex-direction:row;
+    overflow-x:auto;
+    white-space:nowrap;
+    gap:10px;
+    padding-bottom:4px;
+}
+
+.tab-btn{
+    width:100%;
+    margin-right:0;
+}
+
+.stat-grid{
+    grid-template-columns:1fr !important;
+}
+
+#tab-calculator input{
+    width:100%;
+}
+
+#tab-calculator div[style*="display:flex; gap:8px"]{
+    flex-direction:column;
+}
+
+#tab-chat div[style*="display:flex; gap:8px"]{
+    flex-direction:column;
+}
+#chat-input{
+    width:100%;
+}
+
+h1{
+    font-size:28px !important;
+}
+
+.chat-bubble-ai,
+.chat-bubble-user{
+    max-width:95%;
+}
+#tab-health .label-card{
+    padding:20px !important;
+}
+
+#tab-health h3{
+    font-size:22px !important;
+}
+
+#tab-health span{
+    font-size:14px;
+}
+
+#tab-health p{
+    font-size:14px;
+    line-height:1.7;
+}
+
+#tab-health .bar-bg{
+    height:10px;
+}
+}
+.ecosystem-card{
+
+border:1px solid #243140;
+border-radius:18px;
+padding:22px;
+margin-bottom:18px;
+background:#0f172a;
+
+}
+
+.eco-header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+
+}
+
+.eco-number{
+
+width:40px;
+height:40px;
+border-radius:50%;
+background:#2563eb;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+
+}
+
+@media (max-width:900px){
+
+.eco-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+.eco-red,
+.eco-green,
+.eco-yellow,
+.eco-blue{
+
+padding:18px;
+border-radius:14px;
+
+}
+
+.eco-red{
+
+background:#2a1111;
+
+}
+
+.eco-green{
+
+background:#0f2d1e;
+
+}
+
+.eco-yellow{
+
+background:#35270d;
+
+}
+
+.eco-blue{
+
+background:#12273d;
+
+}
+
+.eco-red h4,
+.eco-green h4,
+.eco-yellow h4,
+.eco-blue h4{
+
+margin-top:0;
+margin-bottom:10px;
+font-size:13px;
+
+}
+
+.eco-red p,
+.eco-green p,
+.eco-yellow p,
+.eco-blue p{
+
+margin:0;
+line-height:1.8;
+font-size:14px;
+
+}
+
+.audience-option{
+
+cursor:pointer;
+transition:.25s;
+border:2px solid #253041;
+
+}
+
+.audience-option:hover{
+
+border-color:#3b82f6;
+
+}
+
+.audience-option input{
+
+display:none;
+
+}
+
+.audience-option:has(input:checked){
+
+background:#0b2a57;
+border-color:#2563eb;
+
+}
+
+.audience-option:has(input:checked) div:first-of-type{
+
+color:#7fb5ff;
+
+}
+
+.page{
+
+width:100%;
+max-width:1100px;
+margin:0 auto;
+
+}
+</style>
+
+<div class="main-container">
+
+  <div id="header-section" style="display:flex; justify-content:space-between; align-items:flex-start; padding-bottom:1rem; border-bottom:0.5px solid #333; margin-bottom:1.25rem;">
+    <div>
+      <div style="
+font-size:42px;
+font-weight:800;
+letter-spacing:-1px;
+color:white;
+margin-bottom:10px;
+line-height:1.1;
+">
+Telugu Music Label Intelligence
+</div>
+
+
+
+<span style="
+background:#2a2a2a;
+color:#b3b3b3;
+padding:5px 12px;
+border-radius:999px;
+font-size:11px;
+display:inline-block;
+margin-bottom:12px;
+">
+
+Version 2.0 • Strategy Intelligence Platform
+</span>
+      <div style="font-size:16px; 
+                  color:#b3b3b3; 
+                  margin-bottom:20px;">
+      Created by <span style="font-weight:600;color:#60a5fa;">Vikruti Srija</span> · Growth strategist & product thinker</div>
+    <div style="
+font-size:13px;
+color:#94a3b8;
+margin-top:8px;
+max-width:700px;
+line-height:1.7;
+">
+Exploring growth opportunities, audience monetization, creator ecosystems, and strategy innovation in the Telugu music industry.
+</div>
+    </div>
+  
+<span style="
+background:#0f172a;
+color:#60a5fa;
+font-size:11px;
+padding:6px 12px;
+border-radius:999px;
+font-weight:600;
+border:1px solid #1e3a8a;
+white-space:nowrap;
+">
+LIVE PROTOTYPE
+</span>
+  </div>
+
+  <div style="border-bottom:1px solid #333333; margin-bottom:40px; padding-bottom:20px;" id="tabs">
+<button class="tab-btn active" onclick="switchTab('dashboard', this)">
+Label Dashboard
+</button>
+
+<button class="tab-btn" onclick="switchTab('health', this)">
+Audience Health Score
+</button>
+
+<button class="tab-btn" onclick="switchTab('ecosystem', this)">
+Fan Ecosystem
+</button>
+
+
+<button class="tab-btn" onclick="switchTab('calculator', this)">
+Revenue Calculator
+</button>
+
+
+<button class="tab-btn" onclick="switchTab('chat', this)">
+Strategy Intelligence Assistant
+</button>
+  </div>
+
+  <div id="tab-dashboard" class="page">
+    <p style="font-size:13px; color:#b3b3b3; margin:0 0 1.25rem;">Benchmarking leading music labels relevant to the Telugu market using publicly visible subscriber data, catalogue scale, and market positioning.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-bottom:1.5rem;" id="label-cards"></div>
+    <div style="background:#1f1f1f; border:0.5px solid #333; border-radius:16px; padding:1.25rem;">
+      <div style="font-size:13px; font-weight:500; color:#b3b3b3; margin-bottom:1rem;">YouTube Subscriber Benchmark</div>
+      <div id="bar-chart"></div>
+      <div style="
+margin-top:24px;
+background:#111827;
+border:1px solid #253041;
+border-radius:16px;
+padding:18px;
+">
+
+<h3 style="margin-bottom:16px;">
+Revenue Opportunity Ranking
+</h3>
+
+<div style="line-height:2;">
+
+<div>
+🥇 Saregama Music — Largest audience scale
+</div>
+
+<div>
+🥈 Aditya Music — Strong Telugu market presence
+</div>
+
+<div>
+🥉 Lahari Music — Strong South Indian catalogue
+</div>
+
+<div>
+🚀 Mango Music — Highest relative growth potential
+</div>
+
+</div>
+
+</div>
+      <p style="font-size:11px; color:#b3b3b3; font-style:italic; margin:1rem 0 0;"> Subscriber counts are based on publicly visible YouTube channel data. Additional metrics may include industry estimates and are provided for strategic exploration, product thinking, and educational analysis only.
+</p>
+    </div>
+  </div>
+  
+<div id="tab-health" class="page" style="display:none;">
+    <div class="label-card" style="margin-bottom:24px;">
+
+<h2 style="margin:0 0 14px;font-size:28px;">
+Health Score
+</h2>
+
+<p style="
+color:#cbd5e1;
+line-height:1.8;
+margin-bottom:10px;
+font-size:15px;
+">
+The real question for every music label
+</p>
+
+<p style="
+color:#94a3b8;
+line-height:1.8;
+font-size:14px;
+margin-bottom:28px;
+">
+Subscriber count tells you how many people found you.
+This score tells you how many of them actually care — and how many are on the path to becoming paying fans and revenue-generating communities.
+That is where the real growth is.
+</p>
+
+<h3 style="
+margin-bottom:20px;
+font-size:20px;
+">
+Tell me about your label
+</h3>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+margin-top:10px;
+">
+
+<div>
+
+<div style="
+font-size:15px;
+font-weight:600;
+margin-bottom:8px;
+">
+YouTube subscribers
+</div>
+
+<input
+id="hs-subs"
+type="number"
+placeholder="e.g. 5000000"
+style="
+width:100%;
+padding:14px;
+background:#111827;
+border:1px solid #253041;
+border-radius:12px;
+color:white;
+font-size:15px;
+outline:none;
+box-sizing:border-box;
+">
+
+<div style="
+margin-top:8px;
+font-size:13px;
+color:#94a3b8;
+">
+Your YouTube channel → About section
+</div>
+
+</div>
+
+
+<div>
+
+<div style="
+font-size:15px;
+font-weight:600;
+margin-bottom:8px;
+">
+How many views did your latest song get in its first week?
+</div>
+
+<input
+id="hs-views"
+type="number"
+placeholder="e.g. 500000"
+style="
+width:100%;
+padding:14px;
+background:#111827;
+border:1px solid #253041;
+border-radius:12px;
+color:white;
+font-size:15px;
+outline:none;
+box-sizing:border-box;
+">
+
+<div style="
+margin-top:8px;
+font-size:13px;
+color:#94a3b8;
+">
+YouTube Studio → Content → Latest video → Views
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="margin-top:28px;">
+
+<div style="
+font-size:15px;
+font-weight:600;
+margin-bottom:16px;
+">
+How do your fans react when you release something?
+</div>
+
+<div style="display:grid;gap:12px;">
+
+<label class="metric-card" style="
+display:flex;
+align-items:center;
+gap:12px;
+padding:16px;
+cursor:pointer;
+margin-bottom:10px;
+">
+<input
+type="radio"
+name="fanReaction"
+value="1"
+style="
+width:18px;
+height:18px;
+margin-top:4px;
+flex-shrink:0;
+cursor:pointer;
+accent-color:#3b82f6;
+">
+<div>
+<div style="font-weight:600;">Most people just watch and move on</div>
+<div style="font-size:12px;color:#94a3b8;">
+Views but very few comments or shares
+</div>
+</div>
+</label>
+
+<label class="metric-card" style="
+cursor:pointer;
+display:flex;
+gap:16px;
+align-items:center;
+padding:18px;
+transition:all .2s ease;
+">
+<input
+type="radio"
+name="fanReaction"
+value="2"
+style="
+width:18px;
+height:18px;
+margin-top:4px;
+flex-shrink:0;
+cursor:pointer;
+accent-color:#3b82f6;
+">
+<div>
+<div style="font-weight:600;">
+Some people comment and share
+</div>
+<div style="font-size:12px;color:#94a3b8;">
+Decent interaction on most videos
+</div>
+</div>
+</label>
+<label class="metric-card" style="
+cursor:pointer;
+display:flex;
+gap:16px;
+align-items:center;
+padding:18px;
+transition:all .2s ease;
+">
+<input
+type="radio"
+name="fanReaction"
+value="3"
+style="
+width:18px;
+height:18px;
+margin-top:4px;
+flex-shrink:0;
+cursor:pointer;
+accent-color:#3b82f6;
+">
+<div>
+<div style="font-weight:600;">
+Fans are very active — lots of comments and discussion
+</div>
+<div style="font-size:12px;color:#94a3b8;">
+Strong community engagement on releases
+</div>
+</div>
+</label>
+
+<label class="metric-card" style="
+cursor:pointer;
+display:flex;
+gap:16px;
+align-items:center;
+padding:18px;
+transition:all .2s ease;
+">
+<input
+type="radio"
+name="fanReaction"
+value="4"
+style="
+width:18px;
+height:18px;
+margin-top:4px;
+flex-shrink:0;
+cursor:pointer;
+accent-color:#3b82f6;
+">
+<div>
+<div style="font-weight:600;">
+Fans create their own content inspired by ours
+</div>
+<div style="font-size:12px;color:#94a3b8;">
+Covers, fan edits, reaction videos, song challenges
+</div>
+</div>
+</label>
+
+</div>
+
+</div>
+
+<div style="margin-top:32px;">
+
+<div style="
+font-size:15px;
+font-weight:600;
+margin-bottom:16px;
+">
+Which platforms is your label active on?
+</div>
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+">
+
+<label class="metric-card" style="
+padding:12px 18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+">
+
+<input type="checkbox" value="youtube">
+
+YouTube
+
+</label>
+
+<label class="metric-card" style="
+padding:12px 18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+">
+
+<input type="checkbox" value="instagram">
+
+Instagram
+
+</label>
+
+<label class="metric-card" style="
+padding:12px 18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+">
+
+<input type="checkbox" value="moj">
+
+Moj
+
+</label>
+
+<label class="metric-card" style="
+padding:12px 18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+">
+
+<input type="checkbox" value="facebook">
+
+Facebook
+
+</label>
+
+<label class="metric-card" style="
+padding:12px 18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+">
+
+<input type="checkbox" value="twitter">
+
+Twitter/X
+
+</label>
+
+<label class="metric-card" style="
+padding:12px 18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+">
+
+<input type="checkbox" value="discord">
+
+Discord
+
+</label>
+
+</div>
+
+</div>
+
+<div style="margin-top:32px;">
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+">
+
+<!-- Community -->
+
+<div>
+
+<div style="
+font-size:15px;
+font-weight:600;
+margin-bottom:14px;
+">
+Do you have an official fan community?
+</div>
+<label class="metric-card" style="
+display:flex;
+align-items:center;
+gap:12px;
+padding:16px;
+cursor:pointer;
+margin-bottom:10px;
+">
+<input type="radio" name="community" value="0">
+<div>No, not yet</div>
+</label>
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;margin-bottom:10px;">
+<input type="radio" name="community" value="1">
+<div>Yes, a fan-run WhatsApp or Facebook group</div>
+</label>
+
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;">
+<input type="radio" name="community" value="2">
+<div>Yes, an official membership program</div>
+</label>
+
+</div>
+
+<!-- Creator -->
+
+<div>
+
+<div style="
+font-size:15px;
+font-weight:600;
+margin-bottom:14px;
+">
+Do you work with YouTube creators?
+</div>
+
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;margin-bottom:10px;">
+<input type="radio" name="creator" value="0">
+<div>No</div>
+</label>
+
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;margin-bottom:10px;">
+<input type="radio" name="creator" value="1">
+<div>Sometimes, informally</div>
+</label>
+
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;">
+<input type="radio" name="creator" value="2">
+<div>Yes, we have a regular creator program</div>
+</label>
+
+</div>
+
+<!-- Brand -->
+
+<div>
+
+<div style="
+font-size:15px;
+font-weight:600;
+margin-bottom:14px;
+">
+Do you have brand sponsorship deals?
+</div>
+
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;margin-bottom:10px;">
+<input type="radio" name="brand" value="0">
+<div>No</div>
+</label>
+
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;margin-bottom:10px;">
+<input type="radio" name="brand" value="1">
+<div>Yes, some sponsorships (logo in videos)</div>
+</label>
+
+<label class="metric-card" style="display:flex;gap:10px;cursor:pointer;">
+<input type="radio" name="brand" value="2">
+<div>Yes, we pitch brands with our audience data</div>
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="margin-top:36px;text-align:center;">
+
+<button
+id="calculateHealthScore"
+onclick="calculateHealthScore()"
+style="
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+color:white;
+border:none;
+padding:16px 34px;
+font-size:16px;
+font-weight:600;
+border-radius:14px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+">
+
+Get My Audience Value Score ↗
+
+</button>
+
+<div id="health-results" style="
+display:none;
+margin-top:26px;
+">
+
+<div class="label-card" style="margin-top:24px;">
+<div style="
+display:flex;
+align-items:center;
+gap:22px;
+margin-bottom:20px;
+">
+
+<div id="overall-score" style="
+width:88px;
+height:88px;
+border:5px solid #ef4444;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:700;
+color:#ef4444;
+flex-shrink:0;
+">
+0
+</div>
+
+<div>
+
+<div id="overall-title" style="
+font-size:22px;
+font-weight:700;
+color:#ef4444;
+margin-bottom:8px;
+">
+Critical gaps
+</div>
+
+<div id="overall-desc"
+style="
+color:#b3b3b3;
+line-height:1.7;
+">
+Complete the assessment to view recommendations.
+</div>
+
+</div>
+
+</div>
+
+<div id="health-bars">
+
+<!-- Release -->
+
+<div style="margin-bottom:18px;">
+
+<div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+<span>Release Performance</span>
+<span id="score-release">0 / 20</span>
+</div>
+
+<div class="bar-bg">
+<div id="bar-release" style="
+width:0%;
+height:100%;
+background:#ef4444;
+transition:1s;
+"></div>
+</div>
+
+</div>
+
+<!-- Engagement -->
+
+<div style="margin-bottom:18px;">
+
+<div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+<span>Fan Engagement</span>
+<span id="score-engagement">0 / 15</span>
+</div>
+
+<div class="bar-bg">
+<div id="bar-engagement" style="
+width:0%;
+height:100%;
+background:#10b981;
+transition:1s;
+"></div>
+</div>
+
+</div>
+
+<!-- Platforms -->
+
+<div style="margin-bottom:18px;">
+
+<div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+<span>Multi-platform Presence</span>
+<span id="score-platforms">0 / 15</span>
+</div>
+
+<div class="bar-bg">
+<div id="bar-platforms" style="
+width:0%;
+height:100%;
+background:#3b82f6;
+transition:1s;
+"></div>
+</div>
+
+</div>
+
+<!-- Community -->
+
+<div style="margin-bottom:18px;">
+
+<div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+<span>Direct Fan Community</span>
+<span id="score-community">0 / 20</span>
+</div>
+
+<div class="bar-bg">
+<div id="bar-community" style="
+width:0%;
+height:100%;
+background:#8b5cf6;
+transition:1s;
+"></div>
+</div>
+
+</div>
+
+<!-- Creator -->
+
+<div style="margin-bottom:18px;">
+
+<div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+<span>Creator Partnerships</span>
+<span id="score-creators">0 / 15</span>
+</div>
+
+<div class="bar-bg">
+<div id="bar-creators" style="
+width:0%;
+height:100%;
+background:#06b6d4;
+transition:1s;
+"></div>
+</div>
+
+</div>
+
+<!-- Brand -->
+
+<div style="margin-bottom:18px;">
+
+<div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+<span>Brand Partnerships</span>
+<span id="score-brand">0 / 15</span>
+</div>
+
+<div class="bar-bg">
+<div id="bar-brand" style="
+width:0%;
+height:100%;
+background:#f59e0b;
+transition:1s;
+"></div>
+</div>
+
+</div>
+
+
+<div id="action-plan" style="
+margin-top:24px;
+padding:18px;
+background:#FFF3DD;
+border:2px solid #F2B84B;
+border-radius:16px;
+display:none;
+">
+
+<h3 style="
+margin-bottom:18px;
+font-size:20px;
+font-weight:700;
+color:#7C4A00;
+display:flex;
+align-items:center;
+gap:8px;
+">
+🎯 Your 90-day action plan — focus on these 3 gaps first
+</h3>
+
+
+<div id="action-plan-content">
+
+<div style="
+display:flex;
+align-items:flex-start;
+gap:18px;
+margin-bottom:26px;
+">
+
+<div style="
+width:34px;
+height:34px;
+border-radius:50%;
+background:#9a5d08;
+color:#fff;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+">
+1
+</div>
+
+<div style="
+flex:1;
+text-align:left;
+">
+<div id="plan-title-1" style="
+font-weight:700;
+font-size:20px;
+color:#6b3d00;
+margin-bottom:6px;
+">
+Days 1–30 · Release Performance
+</div>
+
+<div id="plan-desc-1" style="
+line-height:1.8;
+color:#5a3b18;
+">
+Build a launch checklist...
+</div>
+</div>
+
+</div>
+
+
+
+<div style="
+display:flex;
+align-items:flex-start;
+gap:18px;
+margin-bottom:26px;
+">
+
+<div style="
+width:34px;
+height:34px;
+border-radius:50%;
+background:#9a5d08;
+color:#fff;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+">
+2
+</div>
+
+<div style="
+flex:1;
+text-align:left;
+">
+<div id="plan-title-2" style="
+font-weight:700;
+font-size:20px;
+color:#6b3d00;
+margin-bottom:6px;
+">
+Days 31–60 · Direct Fan Community
+</div>
+
+<div id="plan-desc-2" style="
+line-height:1.8;
+color:#5a3b18;
+">
+Launch memberships...
+</div>
+</div>
+
+</div>
+
+
+
+<div style="
+display:flex;
+align-items:flex-start;
+gap:18px;
+">
+
+<div style="
+width:34px;
+height:34px;
+border-radius:50%;
+background:#9a5d08;
+color:#fff;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+">
+3
+</div>
+
+<div style="
+flex:1;
+text-align:left;
+">
+<div id="plan-title-3" style="
+font-weight:700;
+font-size:20px;
+color:#6b3d00;
+margin-bottom:6px;
+">
+Days 61–90 · Creator Partnerships
+</div>
+
+<div id="plan-desc-3" style="
+line-height:1.8;
+color:#5a3b18;
+">
+Collaborate with creators...
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<p style="
+margin-top:14px;
+font-size:12px;
+color:#94a3b8;
+">
+Uses illustrative scoring based on audience engagement, community maturity and monetization readiness.
+</p>
+
+</div>
+
+
+<p style="
+margin-top:10px;
+color:#b3b3b3;
+line-height:1.7;
+">
+Most Telugu labels have already won audience scale. The next growth phase is not acquiring more listeners — it is converting existing listeners into communities, memberships, creator ecosystems, and recurring revenue streams.
+</p>
+
+
+
+</div> <!-- label-card -->
+
+</div> <!-- health-results -->
+
+</div> <!-- tab-health -->
+
+<div id="tab-ecosystem" class="page" style="display:none;">
+
+<div class="label-card">
+
+<h2 style="margin-bottom:12px;">
+Fan Ecosystem
+</h2>
+
+<p style="
+color:#94a3b8;
+line-height:1.8;
+margin-bottom:24px;
+">
+Every subscriber is somewhere on this journey. The biggest revenue is created in the later stages—not by getting more listeners, but by converting existing listeners into loyal communities and paying fans.
+</p>
+
+<div style="
+background:#E7F8F2;
+border:2px solid #7DD3C0;
+padding:22px;
+border-radius:16px;
+margin-bottom:28px;
+">
+
+<p style="
+margin:0;
+font-size:18px;
+line-height:1.8;
+color:#14532d;
+">
+
+Every subscriber is somewhere on this journey.
+
+The biggest revenue is in the later stages — and getting there requires intentional strategy, not luck.
+
+Click any stage to see what most labels do now, what they should do instead, and the immediate action to take.
+
+</p>
+
+</div>
+
+<div id="ecosystem-container">
+
+<!-- Discovery -->
+
+<div class="ecosystem-card" onclick="toggleEco(1)">
+
+<div class="eco-header">
+
+<div style="display:flex;align-items:center;gap:16px;">
+
+<div class="eco-number">
+1
+</div>
+
+<div>
+
+<h3 style="margin:0;">
+Discovery
+</h3>
+
+<p id="eco-discovery"
+style="
+margin:4px 0 0;
+color:#64748b;
+font-size:14px;
+">
+~100% of subscribers
+</p>
+
+</div>
+
+</div>
+
+<div id="eco-arrow-1"
+style="font-size:24px;">
++
+</div>
+
+</div>
+
+
+
+<div id="eco-body-1"
+style="display:none;margin-top:22px;">
+
+<div class="eco-grid">
+
+<div class="eco-red">
+
+<h4>WHAT MOST LABELS DO NOW</h4>
+
+<p>
+Songs are uploaded to YouTube and streaming platforms.
+The label waits for the algorithm to recommend them.
+Growth is mostly passive.
+</p>
+
+</div>
+
+
+
+<div class="eco-green">
+
+<h4>WHAT THEY SHOULD DO</h4>
+
+<p>
+Use SEO-friendly titles, Telugu keywords, teaser campaigns and creator seeding before every release.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="eco-yellow">
+
+<h4>REVENUE AT THIS STAGE</h4>
+
+<p>
+No direct revenue yet.
+This stage determines how many people enter your ecosystem.
+</p>
+
+</div>
+
+
+
+<div class="eco-blue">
+
+<h4>IMMEDIATE ACTION</h4>
+
+<p>
+Optimize every video title for Telugu search. Use artist name, movie name and song title separately.
+</p>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+<!-- Interest -->
+
+<div class="ecosystem-card" onclick="toggleEco(2)">
+
+<div class="eco-header">
+
+<div style="display:flex;align-items:center;gap:16px;">
+
+<div class="eco-number" style="background:#10b981;">
+2
+</div>
+
+<div>
+
+<h3 style="margin:0;">
+Interest
+</h3>
+
+<p id="eco-interest"
+style="
+margin:4px 0 0;
+color:#64748b;
+font-size:14px;
+">
+~40% of subscribers
+</p>
+
+</div>
+
+</div>
+
+<div id="eco-arrow-2"
+style="font-size:24px;">
++
+</div>
+
+</div>
+
+<div id="eco-body-2"
+style="display:none;margin-top:22px;">
+
+<div class="eco-grid">
+
+<div class="eco-red">
+
+<h4>WHAT MOST LABELS DO NOW</h4>
+
+<p>
+Occasional playlist additions. Most labels rely on listeners returning on their own without building an ongoing relationship.
+</p>
+
+</div>
+
+<div class="eco-green">
+
+<h4>WHAT THEY SHOULD DO</h4>
+
+<p>
+Capture fan emails, share artist stories between releases, and keep audiences engaged even when no new music is launching.
+</p>
+
+</div>
+
+</div>
+
+<div class="eco-yellow">
+
+<h4>REVENUE AT THIS STAGE</h4>
+
+<p>
+Revenue is still limited, but this stage determines how many listeners can become long-term fans.
+</p>
+
+</div>
+
+<div class="eco-blue">
+
+<h4>IMMEDIATE ACTION</h4>
+
+<p>
+Add a fan sign-up link in every YouTube description. Even a small email list creates a direct audience outside social platforms.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Engagement -->
+
+<div class="ecosystem-card" onclick="toggleEco(3)">
+
+<div class="eco-header">
+
+<div style="display:flex;align-items:center;gap:16px;">
+
+<div class="eco-number" style="background:#f59e0b;">
+3
+</div>
+
+<div>
+
+<h3 style="margin:0;">Engagement</h3>
+
+<p id="eco-engagement"
+style="margin:4px 0 0;color:#64748b;font-size:14px;">
+~12% of subscribers
+</p>
+
+</div>
+
+</div>
+
+<div id="eco-arrow-3" style="font-size:24px;">+</div>
+
+</div>
+
+<div id="eco-body-3" style="display:none;margin-top:22px;">
+
+<div class="eco-grid">
+
+<div class="eco-red">
+<h4>WHAT MOST LABELS DO NOW</h4>
+<p>Fans comment on videos, but labels rarely reply or encourage discussion.</p>
+</div>
+
+<div class="eco-green">
+<h4>WHAT THEY SHOULD DO</h4>
+<p>Reply to comments, pin fan content, run polls and encourage fan-created videos.</p>
+</div>
+
+</div>
+
+<div class="eco-yellow">
+<h4>REVENUE AT THIS STAGE</h4>
+<p>Higher engagement directly increases sponsorship value and organic reach.</p>
+</div>
+
+<div class="eco-blue">
+<h4>IMMEDIATE ACTION</h4>
+<p>Reply to every comment for the next 60 days and encourage conversations.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- Community -->
+
+<div class="ecosystem-card" onclick="toggleEco(4)">
+
+<div class="eco-header">
+
+<div style="display:flex;align-items:center;gap:16px;">
+
+<div class="eco-number" style="background:#8b5cf6;">
+4
+</div>
+
+<div>
+
+<h3 style="margin:0;">Community</h3>
+
+<p id="eco-community"
+style="margin:4px 0 0;color:#64748b;font-size:14px;">
+~3% of subscribers
+</p>
+
+</div>
+
+</div>
+
+<div id="eco-arrow-4" style="font-size:24px;">+</div>
+
+</div>
+
+<div id="eco-body-4" style="display:none;margin-top:22px;">
+
+<div class="eco-grid">
+
+<div class="eco-red">
+<h4>WHAT MOST LABELS DO NOW</h4>
+<p>Fan groups exist but are usually run by fans, not the label.</p>
+</div>
+
+<div class="eco-green">
+<h4>WHAT THEY SHOULD DO</h4>
+<p>Create official memberships, Discord servers or WhatsApp communities owned by the label.</p>
+</div>
+
+</div>
+
+<div class="eco-yellow">
+<h4>REVENUE AT THIS STAGE</h4>
+<p>Memberships generate recurring monthly revenue and stronger loyalty.</p>
+</div>
+
+<div class="eco-blue">
+<h4>IMMEDIATE ACTION</h4>
+<p>Launch a ₹99/month membership with early song access and exclusive content.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- Purchase -->
+
+<div class="ecosystem-card" onclick="toggleEco(5)">
+
+<div class="eco-header">
+
+<div style="display:flex;align-items:center;gap:16px;">
+
+<div class="eco-number" style="background:#ef4444;">
+5
+</div>
+
+<div>
+
+<h3 style="margin:0;">Purchase</h3>
+
+<p id="eco-purchase"
+style="margin:4px 0 0;color:#64748b;font-size:14px;">
+~0.8% of subscribers
+</p>
+
+</div>
+
+</div>
+
+<div id="eco-arrow-5" style="font-size:24px;">+</div>
+
+</div>
+
+<div id="eco-body-5" style="display:none;margin-top:22px;">
+
+<div class="eco-grid">
+
+<div class="eco-red">
+<h4>WHAT MOST LABELS DO NOW</h4>
+<p>Merchandise is launched occasionally with no structured commerce strategy.</p>
+</div>
+
+<div class="eco-green">
+<h4>WHAT THEY SHOULD DO</h4>
+<p>Launch exclusive merchandise tied to every major release.</p>
+</div>
+
+</div>
+
+<div class="eco-yellow">
+<h4>REVENUE AT THIS STAGE</h4>
+<p>Engaged fans are willing to purchase premium experiences and merchandise.</p>
+</div>
+
+<div class="eco-blue">
+<h4>IMMEDIATE ACTION</h4>
+<p>Create a limited-edition merchandise drop with your next release.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Advocacy -->
+
+<div class="ecosystem-card" onclick="toggleEco(6)">
+
+<div class="eco-header">
+
+<div style="display:flex;align-items:center;gap:16px;">
+
+<div class="eco-number" style="background:#64748b;">
+6
+</div>
+
+<div>
+
+<h3 style="margin:0;">Advocacy</h3>
+
+<p id="eco-advocacy"
+style="margin:4px 0 0;color:#64748b;font-size:14px;">
+~0.15% of subscribers
+</p>
+
+</div>
+
+</div>
+
+<div id="eco-arrow-6" style="font-size:24px;">+</div>
+
+</div>
+
+<div id="eco-body-6" style="display:none;margin-top:22px;">
+
+<div class="eco-grid">
+
+<div class="eco-red">
+<h4>WHAT MOST LABELS DO NOW</h4>
+<p>Fan pages and edits grow organically without recognition from the label.</p>
+</div>
+
+<div class="eco-green">
+<h4>WHAT THEY SHOULD DO</h4>
+<p>Build an official fan ambassador program with recognition and early access.</p>
+</div>
+
+</div>
+
+<div class="eco-yellow">
+<h4>REVENUE AT THIS STAGE</h4>
+<p>Advocates become your most effective marketing channel with almost zero acquisition cost.</p>
+</div>
+
+<div class="eco-blue">
+<h4>IMMEDIATE ACTION</h4>
+<p>Identify your top 100 fan accounts and reward them with exclusive access and recognition.</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+  <div id="tab-calculator" class="page" style="display:none;">
+    <div style="
+background:var(--card);
+border:1px solid var(--border);
+border-radius:24px;
+padding:28px;
+margin-top:10px;
+">
+        <p style="font-size:13px; color:#b3b3b3; margin:0 0 1.25rem;">Estimate your label's uncaptured revenue potential based on YouTube subscribers</p>
+    <b>Key Insight</b>
+
+<p style="
+margin-top:10px;
+line-height:1.7;
+color:#94a3b8;
+">
+Most labels optimize for listeners. The highest-value labels optimize for community members and paying fans. Audience size creates reach. Community creates revenue.
+</p>
+
+    <div style="background:#1f1f1f; border:0.5px solid #333; border-radius:16px; padding:1.25rem; margin-bottom:1.25rem;">
+      <div style="font-size:13px; color:#b3b3b3; margin-bottom:8px;">YouTube channel subscribers</div>
+<div style="margin-bottom:12px;">
+
+<input
+type="number"
+id="subs-input"
+placeholder="e.g. 19000000"
+style="width:100%;">
+
+</div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='1000000'">1M</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='8720000'">8.72M (Mango)</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='63800000'">
+63.8M (Saregama)
+</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='19000000'">19M (Lahari)</button>
+        <button class="quick-btn" onclick="document.getElementById('subs-input').value='36000000'">36M (Aditya)</button>
+      </div>
+      
+    </div>
+
+   <div style="
+margin-top:30px;
+">
+
+<div style="
+font-size:28px;
+font-weight:700;
+margin-bottom:18px;
+">
+How would you describe your audience right now?
+</div>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:16px;
+width:100%;
+">
+
+<label class="metric-card audience-option">
+<input type="radio" name="audienceType" value="0" style="display:none;">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+New and mostly passive
+</div>
+
+<div style="color:#94a3b8;line-height:1.6;">
+Most people just watch and move on — typical early stage.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+<input type="radio" name="audienceType" value="1" style="display:none;">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Growing with some engagement
+</div>
+
+<div style="color:#94a3b8;line-height:1.6;">
+Comments and shares are starting to happen regularly.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+<input type="radio" name="audienceType" value="2" style="display:none;">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Active and engaged
+</div>
+
+<div style="color:#94a3b8;line-height:1.6;">
+Fans comment, share and follow across multiple platforms.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+<input type="radio" name="audienceType" value="3" style="display:none;">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Highly loyal fan base
+</div>
+
+<div style="color:#94a3b8;line-height:1.6;">
+Fans create content about you, advocate for you and feel part of a community.
+</div>
+
+</label>
+
+</div>
+</div>
+
+<div style="
+margin-top:30px;
+width:100%;
+">
+
+<div style="
+font-size:28px;
+font-weight:700;
+margin-bottom:18px;
+">
+How many monthly views does your label generate?
+</div>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:16px;
+width:100%;
+">
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="monthlyViews" value="0">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Lower than subscribers
+</div>
+
+<div style="color:#94a3b8;">
+Monthly views are below total subscribers.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="monthlyViews" value="1">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Around 1× subscribers
+</div>
+
+<div style="color:#94a3b8;">
+Monthly views roughly equal subscriber count.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="monthlyViews" value="2">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Around 2× subscribers
+</div>
+
+<div style="color:#94a3b8;">
+Strong repeat listening across releases.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="monthlyViews" value="3">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+More than 3× subscribers
+</div>
+
+<div style="color:#94a3b8;">
+Excellent catalogue performance and viral reach.
+</div>
+
+</label>
+
+</div>
+</div>
+
+<div style="
+margin-top:30px;
+width:100%;
+">
+
+<div style="
+font-size:28px;
+font-weight:700;
+margin-bottom:18px;
+">
+How many viewers return for every new release?
+</div>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:16px;
+align-items:stretch;
+width:100%;
+">
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="returnAudience" value="0">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Very few
+</div>
+
+<div style="color:#94a3b8;">
+Most viewers watch only once and rarely return.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="returnAudience" value="1">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Sometimes
+</div>
+
+<div style="color:#94a3b8;">
+A portion of viewers return for important releases.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="returnAudience" value="2">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Most releases
+</div>
+
+<div style="color:#94a3b8;">
+Fans regularly come back for new songs and videos.
+</div>
+
+</label>
+
+
+<label class="metric-card audience-option">
+
+<input type="radio" name="returnAudience" value="3">
+
+<div style="font-size:18px;font-weight:700;margin-bottom:8px;">
+Almost every release
+</div>
+
+<div style="color:#94a3b8;">
+A highly loyal audience consistently returns for every release.
+</div>
+
+</label>
+
+</div>   <!-- End of Returning Audience Grid -->
+
+</div>   <!-- End of Returning Audience Section -->
+
+<div style="
+margin-top:28px;
+margin-bottom:30px;
+">
+
+<button
+onclick="runCalc()"
+style="
+width:100%;
+background:#2563eb;
+color:#fff;
+border:none;
+padding:16px;
+border-radius:14px;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+">
+
+Calculate Revenue Potential ↗
+
+</button>
+
+</div>
+
+    <div id="revenue-report">
+
+<div id="calc-results" style="display:none;">
+      <div class="metric-card" style="
+margin-bottom:18px;
+text-align:center;
+">
+
+<div style="
+font-size:12px;
+color:#94a3b8;
+margin-bottom:8px;
+">
+Revenue Opportunity Score
+</div>
+
+<div id="opportunity-score" style="
+font-size:52px;
+font-weight:800;
+color:#10b981;
+line-height:1;
+">
+0
+</div>
+
+<div style="
+font-size:12px;
+color:#94a3b8;
+margin-top:8px;
+">
+Monetization readiness estimate
+</div>
+
+</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-bottom:1.25rem;">
+<div class="metric-card">
+  <div style="font-size:11px; color:#b3b3b3; margin-bottom:4px;">
+    Est. ad revenue today
+  </div>
+
+  <div id="r-current" style="font-size:32px; font-weight:700;">
+    —
+  </div>
+
+  <div style="font-size:10px; color:#b3b3b3; margin-top:2px;">
+    YouTube ads only
+  </div>
+</div>
+        <div class="metric-card">
+          <div style="font-size:11px; color:#b3b3b3; margin-bottom:4px;">Total uncaptured potential</div>
+          <div style="font-size:20px; font-weight:500; color:#0F6E56;" id="r-total">—</div>
+          <div style="font-size:10px; color:#b3b3b3; margin-top:2px;">3 untapped streams</div>
+        </div>
+      </div>
+      <div id="calc-insight" style="
+margin-top:16px;
+padding:16px;
+background:#111827;
+border:1px solid #253041;
+border-radius:12px;
+display:none;
+">
+</div>
+      <div id="opp-cards"></div>
+
+<div style="
+margin-top:12px;
+padding:12px;
+background:#111827;
+border:1px solid #253041;
+border-radius:12px;
+font-size:12px;
+color:#94a3b8;
+line-height:1.6;
+">
+<b>Calculation Assumptions</b><br><br>
+
+Revenue estimates are generated using a combination of:
+
+• YouTube subscriber count<br>
+• Audience engagement stage<br>
+• Monthly viewing performance<br>
+• Returning audience behaviour<br>
+• Estimated monetization readiness through memberships, creator partnerships and brand collaborations.<br><br>
+
+These projections are illustrative and designed to support strategic planning rather than predict guaranteed revenue.
+</div>
+
+<div id="export-section" style="
+display:none;
+margin-top:32px;
+text-align:center;
+">
+
+<button
+onclick="exportRevenueReport()"
+style="
+background:#2563eb;
+color:#fff;
+border:none;
+padding:16px 28px;
+border-radius:14px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+">
+
+Download Revenue Report (PDF) ↗
+
+</button>
+
+</div>
+
+<p style="
+font-size:11px;
+color:#b3b3b3;
+font-style:italic;
+text-align:center;
+margin-top:1rem;
+">
+Illustrative estimates for strategic planning · not guarantees · built by Vikruti Srija
+</p>
+
+</div> <!-- closes calc-results -->
+
+</div> <!-- closes revenue-report -->
+
+</div>
+</div>
+
+
+  <div id="tab-chat" class="page" style="display:none;">
+    <div style="
+background:var(--card);
+border:1px solid var(--border);
+border-radius:24px;
+padding:28px;
+margin-top:10px;
+">
+    <p style="font-size:13px; color:#b3b3b3; margin:0 0 1.25rem;">Strategy Intelligence Assistant for Telugu music label growth</p>
+    <div style="
+font-size:12px;
+color:#b3b3b3;
+margin-top:6px;
+margin-bottom:12px;
+">
+Knowledge-powered strategy assistant built for Telugu music label growth, revenue expansion, creator ecosystems, and fan monetization.
+</div>
+    <div id="chat-box" style="background:#1f1f1f; border:0.5px solid #333; border-radius:16px; padding:1rem; height:320px; overflow-y:auto; margin-bottom:12px; display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; justify-content:flex-start;">
+        <div class="chat-bubble-ai">Welcome. I'm a Telugu music strategy assistant designed to explore label growth, audience monetization, creator ecosystems, and digital strategy.
+<div style="
+margin-top:12px;
+font-size:12px;
+color:#b3b3b3;
+line-height:1.8;
+">
+Suggested questions:<br>
+
+• How can Mango Music grow revenue?<br>
+
+• What creator program should Aditya Music launch?<br>
+
+• How can labels monetize superfans?<br>
+
+• Biggest opportunity in Telugu music?<br>
+
+</div>
+Ask me anything about growing a Telugu music label — revenue models, creator programs, brand partnerships, digital strategy. I'll give you specific, actionable answers.</div>
+      </div>
+    </div>
+    
+    <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;">
+      <button class="quick-btn" onclick="setQ('How can Mango Music increase direct fan revenue?')">Mango Music revenue ideas</button>
+      <button class="quick-btn" onclick="setQ('What creator program should Aditya Music launch?')">Creator program for Aditya</button>
+      <button class="quick-btn" onclick="setQ('How to pitch brand deals to Telugu labels with data?')">Brand deals strategy</button>
+      <button class="quick-btn" onclick="setQ('What is the biggest growth gap in Telugu music right now?')">Biggest growth gap</button>
+    </div>
+    <div style="display:flex; gap:8px;">
+      <input type="text" id="chat-input" placeholder="Ask about Telugu music label growth strategy..." style="flex:1;" onkeydown="if(event.key==='Enter') sendChat()" />
+      <button onclick="sendChat()" id="send-btn" style="padding:0 18px; font-weight:500; font-family:Inter, sans-serif;">Send ↗</button>
+    </div>
+  </div>
+
+  </div>
+<div class="page">
+
+<div style="
+margin-top:50px;
+padding:24px;
+background:#1b1b1b;
+border:1px solid #2f2f2f;
+border-radius:16px;
+">
+
+<h2 style="
+margin-top:0;
+margin-bottom:20px;
+font-size:24px;
+color:white;
+">
+Frequently Asked Questions
+</h2>
+
+<div style="margin-bottom:18px;">
+<b style="font-size:15px;">What is Telugu Music Label Intelligence?</b>
+<p style="margin:6px 0 0;color:#b3b3b3;font-size:14px;line-height:1.6;">
+A product strategy prototype combining label benchmarking, revenue opportunity analysis, and strategy exploration tools for the Telugu music ecosystem.
+</p>
+</div>
+
+<div style="margin-bottom:18px;">
+<b style="font-size:15px;">Who created Telugu Music Label Intelligence?</b>
+<p style="margin:6px 0 0;color:#b3b3b3;font-size:14px;line-height:1.6;">
+Created by Vikruti Srija as an independent product strategy project exploring growth opportunities in music and creator ecosystems.
+</p>
+</div>
+
+<div style="margin-bottom:18px;">
+<b style="font-size:15px;">How does the Revenue Gap Calculator work?</b>
+<p style="margin:6px 0 0;color:#b3b3b3;font-size:14px;line-height:1.6;">
+It uses subscriber counts and illustrative conversion assumptions to estimate audience monetization opportunities.
+</p>
+</div>
+
+<div>
+<b style="font-size:15px;">Is this financial advice?</b>
+<p style="margin:6px 0 0;color:#b3b3b3;font-size:14px;line-height:1.6;">
+No. The tool is intended for strategic exploration and educational analysis only.
+</p>
+</div>
+
+</div>
+
+<div style="
+margin-top:2rem;
+padding-top:1rem;
+border-top:0.5px solid #333;
+display:flex;
+justify-content:space-between;
+align-items:center;
+">
+
+<span style="font-size:11px; color:#b3b3b3;">
+Created by Vikruti Srija ·
+<a href="https://linkedin.com/in/vikruti-srija-648738285" target="_blank" rel="noopener noreferrer" style="color:#4EA1FF;">LinkedIn</a>
+·
+<a href="https://github.com/vikrutisrija" target="_blank" rel="noopener noreferrer" style="color:#4EA1FF;">GitHub</a>
+</span>
+
+<span style="font-size:11px; color:#b3b3b3;">
+Data from public sources · 2026
+<br>
+<span style="font-size:10px;color:#888;">
+Last updated: July 2026
+</span>
+</span>
+
+</div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const LABELS = [
+  {
+    name: "Aditya Music",
+    badge: "Market Leader",
+    subs: 36600000,
+    subsLabel: "36.6M",
+    views: "~36.0B+",
+    founded: 1996,
+    albums: "2,500+ albums [5]",
+    langs: "Telugu, Tamil, Kannada, Hindi",
+    verified: false,
+    source: "Public YouTube channel data",
+    borderColor: "#0F6E56",
+    bgColor: "#E1F5EE",
+    textColor: "#085041"
+  },
+
+  {
+    name: "Lahari Music",
+    badge: "South India Leader",
+    subs: 19200000,
+    subsLabel: "19.2M",
+    views: "~9.89B+",
+    founded: 1974,
+    albums: " 4,000+ titles / 75,000+ tracks [2]",
+    langs: "Telugu, Kannada, Tamil",
+    verified: false,
+    source: "Public YouTube channel data (July 2026)",
+    borderColor: "#185FA5",
+    bgColor: "#E6F1FB",
+    textColor: "#0C447C"
+  },
+
+ {
+  name: "Saregama Music",
+  badge: "Industry Benchmark",
+  subs: 63800000,
+  subsLabel: "63.8M",
+  views: "~33.13B+",
+  founded:"1901",
+  albums: " 160,000+ songs [11]",
+  langs: "Telugu, Hindi, Tamil, Kannada, Bengali & More",
+  verified: false,
+  source: "YouTube subscriber count",
+  borderColor: "#8B5CF6",
+  bgColor: "#F3E8FF",
+  textColor: "#6B21A8"
+},
+
+  {
+    name: "Mango Music",
+    badge: "Telugu Digital Challenger",
+    subs: 8720000,
+    subsLabel: "8.72M",
+    views: "~4.03B+",
+    founded: 2008,
+    albums: "500+",
+    langs: "Telugu",
+    verified: false,
+    source: "YouTube channel data (approx.)",
+    borderColor: "#BA7517",
+    bgColor: "#FAEEDA",
+    textColor: "#854F0B"
+  }
+];
+
+function renderCards() {
+  const c = document.getElementById('label-cards');
+  c.innerHTML = LABELS.map((l,index) => `
+    <div class="label-card" style="
+position:relative;
+overflow:hidden;
+">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
+        <div style="
+position:absolute;
+right:18px;
+top:18px;
+background:#111827;
+border:1px solid #253041;
+padding:4px 10px;
+border-radius:999px;
+font-size:11px;
+font-weight:600;
+color:#94a3b8;
+">
+#${index + 1}
+</div>
+        <div>
+          <div style="
+font-size:16px;
+font-weight:700;
+margin-bottom:10px;
+letter-spacing:-0.3px;
+">
+${l.name}
+</div>
+<span style="
+background:${l.bgColor};
+color:${l.textColor};
+font-size:11px;
+padding:6px 12px;
+border-radius:999px;
+font-weight:600;
+display:inline-block;
+">
+${l.badge}
+</span>
+        </div>
+        ${!l.verified ? `<span style="font-size:10px;color:#b3b3b3;background:#2a2a2a;padding:4px 10px;border-radius:999px;"></span>` : ''}
+      </div>
+      <div class="stat-grid" style="margin-bottom:10px;">
+        <div class="metric-card"><div style="font-size:10px;color:#b3b3b3;margin-bottom:2px;">YT subscribers</div><div style="
+font-size:18px;
+font-weight:700;
+">${l.subsLabel}</div></div>
+        <div class="metric-card"><div style="font-size:10px;color:#b3b3b3;margin-bottom:2px;">Total YT views</div><div style="
+font-size:18px;
+font-weight:700;
+">${l.views}</div></div>
+        <div class="metric-card"><div style="font-size:10px;color:#b3b3b3;margin-bottom:2px;">Founded</div><div style="
+font-size:18px;
+font-weight:700;
+">${l.founded}</div></div>
+        <div class="metric-card">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:6px;
+">
+
+<div style="
+font-size:10px;
+color:#b3b3b3;
+">
+Albums
+</div>
+
+<span style="
+font-size:9px;
+padding:2px 8px;
+border:1px solid #475569;
+border-radius:999px;
+background:#111827;
+color:#cbd5e1;
+font-weight:600;
+">
+Estimated
+</span>
+
+</div>
+
+<div style="
+font-size:18px;
+font-weight:700;
+line-height:1.3;
+">
+${l.albums}
+</div>
+
+</div>
+      </div>
+      <div style="font-size:11px;color:#b3b3b3;">Languages: ${l.langs}</div>
+      <div style="font-size:10px;color:#b3b3b3;opacity:0.6;margin-top:3px;">source: ${l.source}</div>
+    </div>
+  `).join('');
+}
+function renderBars() {
+  const b = document.getElementById('bar-chart');
+
+  const sorted = [...LABELS].sort((a,b) => b.subs - a.subs);
+
+  const max = sorted[0].subs;
+
+  b.innerHTML = sorted.map(l => `
+    <div style="margin-bottom:14px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+        <span style="font-size:12px;">${l.name}</span>
+        <span style="font-size:12px;font-weight:500;color:${l.borderColor};">
+          ${l.subsLabel}
+        </span>
+      </div>
+
+      <div class="bar-bg">
+        <div style="
+          background:${l.borderColor};
+          width:${(l.subs/max)*100}%;
+          height:100%;
+          border-radius:999px;
+        "></div>
+      </div>
+    </div>
+  `).join('');
+}
+function fmtINR(n) {
+  n = Math.round(n);
+  if(n>=10000000) return '₹' + (n/10000000).toFixed(1) + 'Cr/mo';
+  if(n>=100000) return '₹' + (n/100000).toFixed(1) + 'L/mo';
+  if(n>=1000) return '₹' + Math.round(n/1000) + 'K/mo';
+  return '₹' + n + '/mo';
+}
+
+function runCalc() {
+  const s = parseInt(document.getElementById('subs-input').value) || 0;
+
+  const audience =
+Number(document.querySelector('input[name="audienceType"]:checked')?.value);
+
+const monthlyViews =
+Number(document.querySelector('input[name="monthlyViews"]:checked')?.value);
+
+if(isNaN(monthlyViews)){
+
+alert("Please select your monthly views.");
+
+return;
+
+}
+
+
+
+if(isNaN(audience)){
+
+alert("Please select your audience stage.");
+
+return;
+
+}
+
+
+
+const returningAudience =
+Number(document.querySelector('input[name="returnAudience"]:checked')?.value);
+
+if(isNaN(returningAudience)){
+
+alert("Please select your returning audience.");
+
+return;
+
+}
+  if(s < 10000) return;
+
+let membershipRate;
+let brandMultiplier;
+let creatorMultiplier;
+let adMultiplier;
+
+switch(audience){
+
+case 0:   // New & Passive
+
+membershipRate = 0.0015;
+brandMultiplier = 0.70;
+creatorMultiplier = 0.60;
+adMultiplier = 0.85;
+
+break;
+
+
+case 1:   // Growing
+
+membershipRate = 0.0035;
+brandMultiplier = 1.00;
+creatorMultiplier = 0.90;
+adMultiplier = 1.00;
+
+break;
+
+
+case 2:   // Active
+
+membershipRate = 0.0075;
+brandMultiplier = 1.30;
+creatorMultiplier = 1.20;
+adMultiplier = 1.15;
+
+break;
+
+
+case 3:   // Highly Loyal
+
+membershipRate = 0.015;
+brandMultiplier = 1.80;
+creatorMultiplier = 1.60;
+adMultiplier = 1.30;
+
+break;
+
+}
+
+
+let viewsMultiplier =
+[
+0.85,
+1.00,
+1.20,
+1.40
+][monthlyViews];
+
+
+let viewMultiplier;
+
+switch(monthlyViews){
+
+case 0:
+
+viewMultiplier = 0.80;
+
+break;
+
+case 1:
+
+viewMultiplier = 1.00;
+
+break;
+
+case 2:
+
+viewMultiplier = 1.25;
+
+break;
+
+case 3:
+
+viewMultiplier = 1.50;
+
+break;
+
+}
+
+
+const ad = Math.round(
+(s * 3 / 1000) *
+50 *
+adMultiplier *
+viewMultiplier
+);
+
+let returnMultiplier;
+
+switch(returningAudience){
+
+case 0:
+
+returnMultiplier = 0.70;
+
+break;
+
+case 1:
+
+returnMultiplier = 1.00;
+
+break;
+
+case 2:
+
+returnMultiplier = 1.35;
+
+break;
+
+case 3:
+
+returnMultiplier = 1.80;
+
+break;
+
+}
+
+const fan = Math.round(
+s *
+membershipRate *
+99 *
+returnMultiplier
+);
+const brand =
+Math.round(
+(s / 1000000) *
+500000 *
+brandMultiplier *
+viewMultiplier *
+returnMultiplier
+);
+
+const creator =
+Math.round(
+(s / 1000000) *
+200000 *
+creatorMultiplier *
+returnMultiplier
+);
+
+const total =
+fan +
+brand +
+creator;
+   const subscriberScore =
+Math.min((s / 36000000) * 30, 30);
+
+const adScore =
+Math.min((ad / 5000000) * 15, 15);
+
+const membershipScore =
+Math.min((fan / 30000000) * 30, 30);
+
+const brandScore =
+Math.min((brand / 18000000) * 15, 15);
+
+const creatorScore =
+Math.min((creator / 6000000) * 10, 10);
+
+const score =
+Math.round(
+subscriberScore +
+adScore +
+membershipScore +
+brandScore +
+creatorScore
+);
+  document.getElementById('r-current').textContent = fmtINR(ad);
+  document.getElementById('r-total').textContent = fmtINR(total);
+  animateValue(
+'opportunity-score',
+0,
+score,
+1200
+);
+
+
+
+let membershipAction = "";
+let brandAction = "";
+let creatorAction = "";
+
+if(audience === 0){
+
+membershipAction =
+"Build engagement first. Focus on repeat listeners, Shorts, playlists and community before launching memberships.";
+
+brandAction =
+"Improve audience engagement and consistency before approaching brands for sponsorships.";
+
+creatorAction =
+"Encourage fan edits, covers and reactions to increase organic discovery.";
+
+}
+
+else if(audience === 1){
+
+membershipAction =
+"Start testing YouTube Memberships with early access, behind-the-scenes content and exclusive updates.";
+
+brandAction =
+"Prepare a sponsorship media kit using audience insights and engagement metrics.";
+
+creatorAction =
+"Partner with regional Telugu creators to increase organic reach and release promotion.";
+
+}
+
+else if(audience === 2){
+
+membershipAction =
+"Expand memberships with premium content, exclusive livestreams and fan-only experiences.";
+
+brandAction =
+"Begin long-term collaborations with regional brands using audience analytics.";
+
+creatorAction =
+"Launch a structured creator partnership program with licensing and promotional incentives.";
+
+}
+
+else{
+
+membershipAction =
+"Scale memberships aggressively through VIP tiers, premium experiences and exclusive digital products.";
+
+brandAction =
+"Position the label as a premium partner for national and regional brands with long-term campaigns.";
+
+creatorAction =
+"Build an official creator ecosystem with licensing, ambassador programs and revenue-sharing opportunities.";
+
+}
+
+  const opps = [
+    { title:"Direct fan membership", val:fan, color:"#0F6E56", bg:"#E1F5EE", tc:"#085041", basis:"0.5% of subscribers × ₹99/month fan club", action:membershipAction },
+    { title:"Data-backed brand partnerships", val:brand, color:"#185FA5", bg:"#E6F1FB", tc:"#0C447C", basis:"Based on audience scale and regional targeting value", action:brandAction },
+    { title:"Creator partner program", val:creator, color:"#854F0B", bg:"#FAEEDA", tc:"#633806", basis:"Traffic and promotion value from a licensed creator network", action:creatorAction }
+  ];
+
+  document.getElementById('opp-cards').innerHTML = opps.map(o => `
+<div style="
+background:linear-gradient(
+180deg,
+#161d28,
+#111827
+);
+border:2px solid ${o.color};
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+border-radius:16px;
+padding:1.25rem;
+margin-bottom:12px;
+">      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+        <div>
+          <div style="
+font-size:18px;
+font-weight:700;
+">${o.title}</div>
+          <div style="font-size:11px;color:#b3b3b3;margin-top:2px;">${o.basis}</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:18px;font-weight:500;color:${o.color};">${fmtINR(o.val)}</div>
+          <div style="font-size:10px;color:#b3b3b3;">potential</div>
+        </div>
+      </div>
+      <div style="background:${o.bg};border-radius:12px;padding:10px 12px;">
+        <span style="font-size:11px;color:${o.tc};font-weight:500;">How: </span>
+        <span style="font-size:11px;color:${o.tc};">${o.action}</span>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('calc-insight').style.display='block';
+
+let insight = "";
+
+// Weak audience
+if(audience === 0){
+
+insight = `
+<b>Strategic Insight</b><br><br>
+
+Your audience is still in the early growth stage.
+
+<b>Priority for the next 90 days:</b><br><br>
+
+• Publish consistently to increase repeat listeners.<br>
+• Focus on Shorts, Reels and discovery content.<br>
+• Build your first WhatsApp or Telegram fan community.<br>
+• Don't prioritize memberships yet—grow engagement first.
+`;
+
+}
+
+// Growing audience
+else if(audience === 1){
+
+if(monthlyViews >= 2 && returningAudience >= 2){
+
+insight = `
+<b>Strategic Insight</b><br><br>
+
+Although your audience is still growing, fan behaviour is very encouraging.
+
+<b>Priority for the next 90 days:</b><br><br>
+
+• Launch YouTube Memberships.<br>
+• Start exclusive fan content.<br>
+• Partner with Telugu creators.<br>
+• Build a regional brand partnership strategy.
+`;
+
+}else{
+
+insight = `
+<b>Strategic Insight</b><br><br>
+
+Your audience is beginning to engage consistently.
+
+<b>Priority for the next 90 days:</b><br><br>
+
+• Launch an official fan community.<br>
+• Encourage repeat listening across releases.<br>
+• Increase Shorts and Instagram activity.<br>
+• Build stronger storytelling around every release.
+`;
+
+}
+
+}
+
+// Active audience
+else if(audience === 2){
+
+insight = `
+<b>Strategic Insight</b><br><br>
+
+Your audience is highly engaged and ready for monetization.
+
+<b>Priority for the next 90 days:</b><br><br>
+
+• Expand memberships.<br>
+• Launch premium fan experiences.<br>
+• Strengthen creator collaborations.<br>
+• Prepare data-driven sponsorship packages.
+`;
+
+}
+
+// Highly loyal audience
+else{
+
+insight = `
+<b>Strategic Insight</b><br><br>
+
+Your label has developed a strong fan ecosystem.
+
+<b>Priority for the next 90 days:</b><br><br>
+
+• Scale memberships aggressively.<br>
+• Launch VIP experiences.<br>
+• Introduce exclusive merchandise.<br>
+• Expand into long-term brand partnerships.
+`;
+
+}
+
+document.getElementById("calc-insight").innerHTML = insight;
+
+  document.getElementById('calc-results').style.display = 'block';
+  document.getElementById("export-section").style.display="block";
+}
+
+function switchTab(id, btn) {
+
+  [
+    'dashboard',
+    'health',
+    'ecosystem',
+    'calculator',
+    'chat'
+  ].forEach(function(tab) {
+
+    const el = document.getElementById('tab-' + tab);
+
+    if (el) {
+      el.style.display = (tab === id) ? 'block' : 'none';
+    }
+
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+
+  btn.classList.add('active');
+}
+
+function setQ(q) {
+  document.getElementById('chat-input').value = q;
+  document.getElementById('chat-input').focus();
+}
+
+function addBubble(role, text) {
+  const box = document.getElementById('chat-box');
+  const wrap = document.createElement('div');
+  wrap.style.cssText = `display:flex;justify-content:${role==='user'?'flex-end':'flex-start'};`;
+  const bubble = document.createElement('div');
+  bubble.className = role==='user' ? 'chat-bubble-user' : 'chat-bubble-ai';
+  bubble.textContent = text;
+  wrap.appendChild(bubble);
+  box.appendChild(wrap);
+  box.scrollTop = box.scrollHeight;
+  return bubble;
+}
+
+
+
+const KNOWLEDGE = [
+
+{
+keywords:["mango","revenue","money","grow"],
+answer:`Mango Music's biggest growth opportunities:
+
+• YouTube Memberships
+• Exclusive fan communities
+• Early-access song releases
+• Regional brand partnerships
+
+Priority:
+
+1. Fan Memberships
+2. Creator Program
+3. Brand Deals
+
+Potential impact:
+₹20L–₹50L monthly revenue opportunity.`
+},
+{
+keywords:["monetization","revenue model"],
+answer:`The strongest revenue models for music labels today are:
+
+• Fan memberships
+• Brand partnerships
+• Creator ecosystems
+• Premium experiences
+• Licensing programs
+
+The highest-performing labels combine multiple revenue streams rather than relying only on advertising.`
+},
+{
+keywords:["aditya","creator"],
+answer:`Aditya Music should launch a Creator Partner Program.
+
+Benefits:
+
+• More organic song discovery
+• Stronger creator relationships
+• Increased short-form video usage
+
+Strategy:
+
+Provide licensed music access to selected Telugu creators in exchange for promotion and audience insights.`
+},
+
+{
+keywords:["lahari"],
+answer:`Lahari Music's opportunity lies in building stronger fan communities and creator ecosystems.
+
+Focus areas:
+
+• Telugu creator partnerships
+• Fan memberships
+• Exclusive content
+• Artist storytelling
+
+Goal:
+
+Convert passive listeners into active communities.`
+},
+
+{
+keywords:["opportunity","growth gap","biggest opportunity"],
+answer:`The biggest growth opportunity in Telugu music is direct fan monetization.
+
+Most labels rely on:
+
+• Streaming revenue
+• YouTube advertising
+
+Few labels have:
+
+• Paid memberships
+• Fan subscriptions
+• Creator ecosystems
+
+Labels that build direct fan relationships will have a significant advantage over the next five years.`
+},
+
+{
+keywords:["saregama"],
+answer:`Saregama Music can strengthen its Telugu presence through:
+
+• Regional artist partnerships
+• Telugu playlist strategy
+• Creator collaborations
+• Short-form video campaigns
+
+Advantage:
+
+Strong catalogue plus strong brand trust.`
+},
+
+{
+keywords:["brand","partnership"],
+answer:`Data-backed brand partnerships are one of the largest untapped opportunities.
+
+Recommendations:
+
+• Build audience reports
+• Create demographic dashboards
+• Package listener insights
+• Sell audience access, not just sponsorships`
+},
+
+{
+keywords:["fan","membership","community"],
+answer:`Fan monetization is one of the strongest growth opportunities.
+
+Ideas:
+
+• YouTube Memberships
+• Fan-only content
+• Early-access releases
+• Behind-the-scenes content
+• Exclusive livestreams`
+},
+
+{
+keywords:["telugu","market"],
+answer:`Telugu music is among India's strongest digital music ecosystems.
+
+Key opportunities:
+
+• Creator-led discovery
+• Regional brand partnerships
+• Fan monetization
+• Community building
+
+Biggest gap:
+
+Converting listeners into paying superfans.`
+},
+{
+keywords:["youtube","growth","subscribers"],
+answer:`To grow YouTube subscribers:
+
+• Increase Shorts output
+• Collaborate with creators
+• Create artist-led content
+• Build playlist ecosystems
+• Use release countdown campaigns`
+},
+
+{
+keywords:["shorts","reels"],
+answer:`Short-form video is the strongest music discovery channel today.
+
+Recommendations:
+
+• Provide creator-friendly audio clips
+• Launch trend challenges
+• Partner with Telugu influencers
+• Track reuse rates`
+},
+
+{
+keywords:["artist","artists"],
+answer:`Labels should invest in artist brands, not just songs.
+
+Focus:
+
+• Personal storytelling
+• Community building
+• Live interaction
+• Consistent content publishing`
+}
+
+];
+
+function sendChat(){
+
+const inp=document.getElementById('chat-input');
+
+const msg=inp.value.trim();
+
+if(!msg) return;
+
+inp.value='';
+
+addBubble('user',msg);
+
+const lower=msg.toLowerCase();
+
+let reply=null;
+
+for(const item of KNOWLEDGE){
+
+if(item.keywords.some(k=>lower.includes(k))){
+
+reply=item.answer;
+
+break;
+
+}
+
+}
+
+if(!reply){
+
+reply=`I can help with:
+
+• Mango Music growth strategy
+• Aditya Music creator programs
+• Lahari Music growth plans
+• Saregama Music opportunities
+• Fan memberships
+• Brand partnerships
+• Telugu music market insights
+
+Try asking a more specific question.`;
+
+}
+
+const thinking = addBubble('assistant','Thinking...');
+
+setTimeout(()=>{
+let i=0;
+
+thinking.textContent='';
+
+const typer=setInterval(()=>{
+
+thinking.textContent += reply[i];
+
+i++;
+
+if(i>=reply.length){
+
+clearInterval(typer);
+
+}
+
+},10);
+},800);
+
+}
+
+function animateValue(id,start,end,duration){
+
+const obj=document.getElementById(id);
+
+const range=end-start;
+
+let startTime=null;
+
+function step(timestamp){
+
+if(!startTime) startTime=timestamp;
+
+const progress=Math.min(
+(timestamp-startTime)/duration,
+1
+);
+
+obj.textContent=
+Math.floor(
+progress*range+start
+);
+
+if(progress<1){
+requestAnimationFrame(step);
+}
+
+}
+
+requestAnimationFrame(step);
+
+}
+
+function calculateHealthScore(){
+
+document.getElementById("health-results").style.display="block";
+
+// Test values
+const subscribers =
+parseInt(document.getElementById("hs-subs").value) || 0;
+
+const views =
+parseInt(document.getElementById("hs-views").value) || 0;
+
+
+const fanReaction =
+Number(document.querySelector('input[name="fanReaction"]:checked')?.value || 0);
+
+const community =
+Number(document.querySelector('input[name="community"]:checked')?.value || 0);
+
+const creator =
+Number(document.querySelector('input[name="creator"]:checked')?.value || 0);
+
+const brand =
+Number(document.querySelector('input[name="brand"]:checked')?.value || 0);
+
+const platforms =
+document.querySelectorAll('input[type="checkbox"]:checked').length;
+
+
+
+let score = 0;
+
+// ----------------------------
+// Release Performance (20)
+// ----------------------------
+
+let releaseScore = 0;
+
+if (subscribers > 0) {
+
+    const ratio = (views / subscribers) * 100;
+
+    if (ratio >= 20) releaseScore = 20;
+    else if (ratio >= 15) releaseScore = 18;
+    else if (ratio >= 10) releaseScore = 16;
+    else if (ratio >= 7) releaseScore = 14;
+    else if (ratio >= 5) releaseScore = 12;
+    else if (ratio >= 3) releaseScore = 8;
+    else if (ratio >= 1) releaseScore = 5;
+    else releaseScore = 2;
+}
+
+// ----------------------------
+// Fan Engagement (15)
+// ----------------------------
+
+let engagementScore = 0;
+
+switch(fanReaction){
+
+case 1:
+engagementScore = 4;
+break;
+
+case 2:
+engagementScore = 8;
+break;
+
+case 3:
+engagementScore = 12;
+break;
+
+case 4:
+engagementScore = 15;
+break;
+
+}
+
+// ----------------------------
+// Platform Presence (15)
+// ----------------------------
+
+let platformScore = Math.min(platforms * 2.5,15);
+
+// ----------------------------
+// Community (20)
+// ----------------------------
+
+let communityScore = 0;
+
+switch(community){
+
+case 0:
+communityScore = 0;
+break;
+
+case 1:
+communityScore = 12;
+break;
+
+case 2:
+communityScore = 20;
+break;
+
+}
+
+// ----------------------------
+// Creator Program (15)
+// ----------------------------
+
+let creatorScore = 0;
+
+switch(creator){
+
+case 0:
+creatorScore = 0;
+break;
+
+case 1:
+creatorScore = 8;
+break;
+
+case 2:
+creatorScore = 15;
+break;
+
+}
+
+// ----------------------------
+// Brand Partnerships (15)
+// ----------------------------
+
+let brandScore = 0;
+
+switch(brand){
+
+case 0:
+brandScore = 0;
+break;
+
+case 1:
+brandScore = 8;
+break;
+
+case 2:
+brandScore = 15;
+break;
+
+}
+
+// ----------------------------
+// Overall Score
+// ----------------------------
+
+score =
+releaseScore +
+engagementScore +
+platformScore +
+communityScore +
+creatorScore +
+brandScore;
+
+score = Math.round(score);
+
+if(score>100) score=100;
+
+
+
+document.getElementById("overall-score").innerHTML = score;
+
+const scoreCircle = document.getElementById("overall-score");
+const scoreTitle = document.getElementById("overall-title");
+
+let scoreColor = "";
+
+if (score >= 90) {
+
+    scoreColor = "#22c55e";   // Bright Green
+
+}
+else if (score >= 70) {
+
+    scoreColor = "#84cc16";   // Light Green
+
+}
+else if (score >= 40) {
+
+    scoreColor = "#facc15";   // Yellow
+
+}
+else if (score >= 20) {
+
+    scoreColor = "#f97316";   // Orange
+
+}
+else {
+
+    scoreColor = "#ef4444";   // Red
+
+}
+
+scoreCircle.style.borderColor = scoreColor;
+scoreCircle.style.color = scoreColor;
+scoreTitle.style.color = scoreColor;
+
+
+if(score > 100){
+    score = 100;
+}
+if(score >= 80){
+
+document.getElementById("overall-title").innerHTML =
+"Excellent audience";
+
+}
+
+else if(score >= 60){
+
+document.getElementById("overall-title").innerHTML =
+"Strong foundation";
+
+}
+
+else if(score >= 40){
+
+document.getElementById("overall-title").innerHTML =
+"Growing audience";
+
+}
+
+else{
+
+document.getElementById("overall-title").innerHTML =
+"Critical gaps";
+
+}
+if(score >= 80){
+
+document.getElementById("overall-desc").innerHTML =
+"Your audience is highly engaged and ready for memberships, creator partnerships and premium monetization.";
+
+}
+
+else if(score >= 60){
+
+document.getElementById("overall-desc").innerHTML =
+"Your audience has strong potential. Focus on building recurring fan relationships.";
+
+}
+
+else if(score >= 40){
+
+document.getElementById("overall-desc").innerHTML =
+"You have attention. The next opportunity is converting listeners into community members.";
+
+}
+
+else{
+
+document.getElementById("overall-desc").innerHTML =
+"Your audience exists, but engagement and monetization need significant improvement.";
+
+}
+
+// Release
+document.getElementById("score-release").innerHTML =
+releaseScore + " / 20";
+
+document.getElementById("bar-release").style.width =
+(releaseScore / 20 * 100) + "%";
+
+// Engagement
+document.getElementById("score-engagement").innerHTML =
+Math.round(engagementScore) + " / 15";
+
+document.getElementById("bar-engagement").style.width =
+(engagementScore / 15 * 100) + "%";
+
+// Platforms
+document.getElementById("score-platforms").innerHTML =
+Math.round(platformScore) + " / 15";
+
+document.getElementById("bar-platforms").style.width =
+(platformScore / 15 * 100) + "%";
+
+// Community
+document.getElementById("score-community").innerHTML =
+communityScore + " / 20";
+
+document.getElementById("bar-community").style.width =
+(communityScore / 20 * 100) + "%";
+
+// Creators
+document.getElementById("score-creators").innerHTML =
+creatorScore + " / 15";
+
+document.getElementById("bar-creators").style.width =
+(creatorScore / 15 * 100) + "%";
+
+// Brand
+document.getElementById("score-brand").innerHTML =
+brandScore + " / 15";
+
+document.getElementById("bar-brand").style.width =
+(brandScore / 15 * 100) + "%";
+
+const gaps = [
+
+{
+name:"Release Performance",
+score:releaseScore,
+action:"Build a launch checklist: tease 3 days before release, release at 9am, share to all platforms within 1 hour, and reply to all early comments."
+},
+
+{
+name:"Fan Engagement",
+score:engagementScore,
+action:"Reply to every early comment, post weekly polls, and encourage fans to create reels, covers and reaction videos."
+},
+
+{
+name:"Multi-platform Presence",
+score:platformScore,
+action:"Post every release on Instagram Reels, YouTube Shorts, Facebook and Moj. Repurpose one song into at least 5 short-form videos."
+},
+
+{
+name:"Direct Fan Community",
+score:communityScore,
+action:"Launch YouTube Memberships or a WhatsApp/Discord community this month. Offer early access and exclusive content."
+},
+
+{
+name:"Creator Partnerships",
+score:creatorScore,
+action:"DM 10 Telugu creators with 50K–500K subscribers. Offer licensed music, early access and collaboration opportunities."
+},
+
+{
+name:"Brand Partnerships",
+score:brandScore,
+action:"Create a sponsorship media kit with audience insights and pitch regional brands for music partnerships."
+}
+
+];
+
+gaps.sort((a,b)=>a.score-b.score);
+
+const weakest = gaps.slice(0,3);
+
+document.getElementById("action-plan").style.display = "block";
+
+const dayTitles = [
+"Days 1–30",
+"Days 31–60",
+"Days 61–90"
+];
+
+for(let i=0;i<3;i++){
+
+const item = weakest[i];
+
+document.getElementById("plan-title-"+(i+1)).innerHTML =
+dayTitles[i] + " · " + item.name;
+
+document.getElementById("plan-desc-"+(i+1)).textContent =
+item.action;
+
+}
+
+// ===== Audience Value Funnel =====
+
+document.getElementById("eco-discovery").innerHTML =
+"100% of subscribers";
+
+
+
+document.getElementById("eco-interest").innerHTML =
+interestPercent + "% of subscribers";
+
+document.getElementById("eco-engagement").innerHTML =
+engagementPercent + "% of subscribers";
+
+document.getElementById("eco-community").innerHTML =
+communityPercent + "% of subscribers";
+
+document.getElementById("eco-purchase").innerHTML =
+purchasePercent + "% of subscribers";
+
+document.getElementById("eco-advocacy").innerHTML =
+advocacyPercent + "% of subscribers";
+}
+
+renderCards();
+renderBars();
+
+
+function toggleEco(id){
+
+const body =
+document.getElementById("eco-body-"+id);
+
+const arrow =
+document.getElementById("eco-arrow-"+id);
+
+if(body.style.display==="none" || body.style.display===""){
+
+body.style.display="block";
+arrow.innerHTML="−";
+
+}
+
+else{
+
+body.style.display="none";
+arrow.innerHTML="+";
+
+}
+
+}
+
+function exportRevenueReport(){
+
+const { jsPDF } = window.jspdf;
+
+const doc = new jsPDF("p","mm","a4");
+
+// Read values from page
+const score = document.getElementById("opportunity-score").innerText;
+const adRevenue = document.getElementById("r-current").innerText;
+const totalRevenue = document.getElementById("r-total").innerText;
+const insight = document.getElementById("calc-insight").innerText;
+
+// ---------- Header ----------
+doc.setFillColor(37,99,235);
+doc.rect(0,0,210,28,"F");
+
+doc.setTextColor(255,255,255);
+doc.setFont("helvetica","bold");
+doc.setFontSize(20);
+doc.text("Telugu Music Label Intelligence",15,16);
+
+doc.setFontSize(11);
+doc.text("Revenue Opportunity Report",15,23);
+
+// ---------- Date ----------
+doc.setTextColor(80);
+doc.setFont("helvetica","normal");
+doc.setFontSize(10);
+doc.text(
+"Generated: " + new Date().toLocaleString(),
+15,
+36
+);
+
+// ---------- Executive Summary ----------
+doc.setDrawColor(210);
+doc.roundedRect(15,42,180,58,3,3);
+
+doc.setTextColor(0);
+doc.setFont("helvetica","bold");
+doc.setFontSize(14);
+doc.text("Executive Summary",20,52);
+
+doc.setFont("helvetica","normal");
+doc.setFontSize(12);
+
+doc.text("Revenue Opportunity Score",20,66);
+doc.text(score + "/100",145,66);
+
+doc.text("Estimated Ad Revenue",20,76);
+doc.text(adRevenue,145,76);
+
+doc.text("Untapped Revenue Potential",20,86);
+doc.text(totalRevenue,145,86);
+
+// ---------- Strategic Insight ----------
+doc.setFont("helvetica","bold");
+doc.setFontSize(14);
+doc.text("Strategic Insight",20,112);
+
+doc.setFont("helvetica","normal");
+doc.setFontSize(11);
+
+const lines = doc.splitTextToSize(insight,170);
+doc.text(lines,20,121);
+
+// ---------- Footer ----------
+doc.setDrawColor(220);
+doc.line(15,285,195,285);
+
+doc.setFontSize(9);
+doc.setTextColor(120);
+
+doc.text(
+"Generated by Telugu Music Label Intelligence",
+15,
+291
+);
+
+doc.text(
+"Built by Vikruti Srija",
+145,
+291
+);
+
+// ---------- Download ----------
+const today = new Date().toISOString().split("T")[0];
+
+doc.save(
+`Telugu_Music_Label_Intelligence_Revenue_Report_${today}.pdf`
+);
+
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+
+    const firstBtn = document.querySelector('.tab-btn.active') || document.querySelector('.tab-btn');
+
+    switchTab('dashboard', firstBtn);
+
+});
+
+</script>
+
+
+<script>
+
+window.onload = function () {
+
+    document.getElementById("tab-dashboard").style.display = "block";
+    document.getElementById("tab-health").style.display = "none";
+    document.getElementById("tab-ecosystem").style.display = "none";
+    document.getElementById("tab-calculator").style.display = "none";
+    document.getElementById("tab-chat").style.display = "none";
+
+    document.querySelectorAll(".tab-btn").forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    document.querySelector(".tab-btn").classList.add("active");
+
+};
+
+</script>
+</body>
+</html>
